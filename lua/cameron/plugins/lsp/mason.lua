@@ -4,6 +4,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
+	opts = { ensure_installed = { "prettier" } },
 	config = function()
 		-- import mason
 		local mason = require("mason")
@@ -29,10 +30,8 @@ return {
 			ensure_installed = {
 				"html",
 				"cssls",
-				"tailwindcss",
 				"svelte",
 				"lua_ls",
-				"emmet_language_server",
 				"graphql",
 				"prismals",
 			},
