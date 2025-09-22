@@ -31,3 +31,6 @@ opt.splitbelow = true
 
 -- Disable vim deprecated messages
 vim.deprecate = function() end
+
+-- Set winborder for mason issue
+vim.o.winborder = "rounded"

@@ -24,3 +24,13 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- Switch out of TERMINAL mode to swap windows
 keymap.set("t", "<C-t>", "<C-\\><C-n>:echo<CR>", { noremap = true, silent = true })
+
+-- Disable arrow keys to prevent myself from abusing them
+-- keymap.set("n", "<Up>", "<Nop>", { noremap = true })
+-- keymap.set("n", "<Down>", "<Nop>", { noremap = true })
+-- keymap.set("n", "<Left>", "<Nop>", { noremap = true })
+-- keymap.set("n", "<Right>", "<Nop>", { noremap = true })
+-- keymap.set("i", "<Up>", "<Nop>", { noremap = true })
+-- keymap.set("i", "<Down>", "<Nop>", { noremap = true })
+-- keymap.set("i", "<Left>", "<Nop>", { noremap = true })
+-- keymap.set("i", "<Right>", "<Nop>", { noremap = true })

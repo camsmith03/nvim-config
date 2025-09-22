@@ -45,9 +45,9 @@ return {
 				"black", -- python formatter
 				"eslint_d", -- js linter
 				"codelldb",
-				"clangd",
+				--			"clangd",
 				"cspell",
-				"clang-format",
+				--      "clang-format",
 			},
 		})
 	end,
