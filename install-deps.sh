@@ -26,7 +26,7 @@ DEPS=""
 if [[ "$ID" == "debian" ]] || [[ "$ID" == "ubuntu" ]]; then
 	PKGMGR="apt"
 	PKGMGR_OPTS="install -y"
-	DEPS="gcc build-essential git curl wget unzip ripgrep fd-find xclip luarocks golang cargo ruby-full php composer default-jdk perl cpanminus tree-sitter-cli pandoc python3-full clangd"
+	DEPS="gcc build-essential git curl wget unzip ripgrep fd-find xclip luarocks golang cargo ruby-full php composer default-jdk perl cpanminus pandoc python3-full clangd"
 	sudo $PKGMGR update
   if ! [[ "$VERSION_ID" == "13" ]]; then 
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
@@ -34,7 +34,7 @@ if [[ "$ID" == "debian" ]] || [[ "$ID" == "ubuntu" ]]; then
     tar xf lazygit.tar.gz lazygit
     sudo install lazygit -D -t /usr/local/bin/
   else
-    DEPS="$DEPS lazygit"
+    DEPS="$DEPS lazygit tree-sitter-cli"
   fi
 elif [[ "$ID" == "fedora" ]]; then
 	PKGMGR="dnf"
@@ -93,6 +93,11 @@ fi
 if command -v cpanm &> /dev/null; then
 	echo "Installing Neovim::Ext for perl..."
 	cpanm --sudo --notest Neovim::Ext
+fi
+
+if command -v tree-sitter &> /dev/null; then;
+  echo "Installing tree-sitter-cli..."
+  npm install tree-sitter-cli
 fi
 
 echo "--------------------------------------------------"
